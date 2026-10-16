@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="/src/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El Hipódromo del Oeste — Carreras de Caballos</title>
+</head>
+
+<body>
+  <div id="app">
+    <header class="saloon-top">
+      <p class="saloon-top__town">★ San Diego, 1881 ★</p>
+      <nav class="nav">
+        <h3 id="cashText" class="nav__brand" href="/"></h3>
+
+    </header>
+
+
+
+    <section class="hero">
+      <div class="hero__badge">— Saloon &amp; Turf Club —</div>
+      <h1 class="hero__title">Hipódromo</h1>
+      <p class="hero__rope">━━━━━━ ◈ ━━━━━━</p>
+      <p class="hero__sub">Polvo, herraduras y gloria. La pista más rápida al oeste del Río Bravo.</p>
+      <div class="hero__cta">
+        <a href="#apuesta" class="btn btn--red">Apostar ahora</a>
+      </div>
+    </section>
+
+    <section id="posiciones" class="section section--dark">
+      <h2 class="section__title section__title--light">Tablón de forajidos</h2>
+      <div class="wanted">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Corcel</th>
+              <th>Jinete</th>
+              <th>Cuota</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Slow Dancer</td>
+              <td>Johnny Joestar</td>
+              <td>2 a 1</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Valkyrie</td>
+              <td>Gyro Zeppeli</td>
+              <td>3 a 1</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Silver Bullet</td>
+              <td>Diego Brando</td>
+              <td>5 a 1</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Hey! Ya!</td>
+              <td>Pocoloco</td>
+              <td>8 a 1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="apuesta" class="section">
+      <div class="ticket">
+        <h2>🎟️ Tu boleto de apuesta</h2>
+        <p>Elige tu corcel, forastero. Sin devoluciones.</p>
+        <form id="bet-form" class="ticket__form">
+          <label>Corcel
+            <select id="bet-horse" required>
+              <option value="Slow Dancer">Slow Dancer (Johnny Joestar) — 2 a 1</option>
+              <option value="Valkyrie">Valkyrie (Gyro Zeppeli) — 3 a 1</option>
+              <option value="Silver Bullet">Silver Bullet (Diego Brando) — 5 a 1</option>
+              <option value="Hey! Ya!">Hey! Ya! (Pocoloco) — 8 a 1</option>
+            </select>
+          </label>
+          <label>Dólares
+            <input id="bet-amount" type="number" min="1" max="100" placeholder="$50" required>
+          </label>
+          <button id="betButton" class="btn btn--red" type="submit">
+            Sellar apuesta
+          </button>
+        </form>
+        <p id="bet-result" class="ticket__result" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>El Hipódromo del Oeste — Donde los valientes apuestan. Prohibido desenfundar en la pista.</p>
+    </footer>
+  </div>
+  <script defer type="module" src="/src/main.ts"></script>
+</body>
+
+</html>

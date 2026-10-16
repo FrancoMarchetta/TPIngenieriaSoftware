@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="/src/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrera — El Hipódromo del Oeste</title>
+</head>
+
+<body>
+  <div id="app">
+    <header class="saloon-top">
+      <p class="saloon-top__town">★ San Diego, 1881 ★</p>
+    </header>
+
+    <nav class="nav">
+      <a class="nav__brand" href="/index.html">← Tablón</a>
+      <span class="nav__links">Etapa 3 — Cruce del Desierto</span>
+    </nav>
+
+    <section class="section race">
+      <h2 class="section__title section__title--light">En la pista</h2>
+      <p class="race__meta">2.000 varas · 4 corceles · Puerta cerrada</p>
+
+      <div class="track">
+        <div class="track__finish" title="Meta">🏁 META</div>
+
+        <div class="lane">
+          <span class="lane__num">1</span>
+          <span class="lane__rider">Johnny Joestar <em>“Slow Dancer”</em></span>
+          <div class="lane__line"><span class="lane__horse" style="--pos: 2%">🐎</span></div>
+          <span class="lane__odds">2 a 1</span>
+        </div>
+
+        <div class="lane">
+          <span class="lane__num">2</span>
+          <span class="lane__rider">Gyro Zeppeli <em>“Valkyrie”</em></span>
+          <div class="lane__line"><span class="lane__horse" style="--pos: 2%">🐎</span></div>
+          <span class="lane__odds">3 a 1</span>
+        </div>
+
+        <div class="lane">
+          <span class="lane__num">3</span>
+          <span class="lane__rider">Diego Brando <em>“Silver Bullet”</em></span>
+          <div class="lane__line"><span class="lane__horse" style="--pos: 2%">🐎</span></div>
+          <span class="lane__odds">5 a 1</span>
+        </div>
+
+        <div class="lane">
+          <span class="lane__num">4</span>
+          <span class="lane__rider">Pocoloco <em>“Hey! Ya!”</em></span>
+          <div class="lane__line"><span class="lane__horse" style="--pos: 2%">🐎</span></div>
+          <span class="lane__odds">8 a 1</span>
+        </div>
+      </div>
+
+      <div class="race__controls">
+        <button class="btn btn--red" type="button" disabled>Iniciar carrera</button>
+        <button class="btn btn--ghost" type="button" disabled>Reiniciar</button>
+        <p class="race__note">Botones muertos a propósito. Lógica viene después.</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>El Hipódromo del Oeste — Prohibido desenfundar en la pista.</p>
+    </footer>
+  </div>
+</body>
+
+</html>

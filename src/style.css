@@ -1,0 +1,454 @@
+@import url('https://fonts.googleapis.com/css2?family=Rye&family=Smokum&family=Special+Elite&display=swap');
+
+:root {
+  --wood: #4a2c17;
+  --wood-dark: #2b1a0e;
+  --parchment: #f0dcb2;
+  --parchment-dark: #d9bd85;
+  --red: #8c1d18;
+  --gold: #c9971c;
+  --ink: #241407;
+}
+
+a{
+  color: var(--gold);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--wood-dark);
+  color: var(--ink);
+  font-family: 'Special Elite', 'Courier New', monospace;
+}
+
+/* Franja superior saloon */
+.saloon-top {
+  background: repeating-linear-gradient(90deg, var(--wood) 0 60px, #3a2212 60px 120px);
+  color: var(--gold);
+  text-align: center;
+  padding: 0.5rem;
+  letter-spacing: 3px;
+  font-size: 0.8rem;
+  border-bottom: 3px solid var(--gold);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 1.5rem;
+  background: #1a0f06;
+  color: var(--parchment);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav__brand {
+  font-family: 'Rye', serif;
+  font-size: 1.2rem;
+  color: var(--gold);
+}
+
+.nav__links {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.nav__links a {
+  color: var(--parchment);
+  text-decoration: none;
+}
+
+.nav__links a:hover {
+  color: var(--gold);
+}
+
+/* Héroe: atardecer desierto */
+.hero {
+  text-align: center;
+  padding: 4rem 1.5rem 3rem;
+  color: #fff8e6;
+  background:
+    radial-gradient(ellipse 60% 45% at 50% 78%, #ffcf5c 0%, #e8932f 28%, transparent 70%),
+    linear-gradient(#2b1a3a 0%, #7a2e1d 38%, #c65a1e 62%, #8a4a1a 78%, #4a2c17 100%);
+  border-bottom: 8px solid var(--wood);
+  position: relative;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 26px;
+  background: repeating-linear-gradient(-45deg, transparent 0 14px, rgba(0, 0, 0, .35) 14px 28px);
+}
+
+.hero__badge {
+  display: inline-block;
+  border: 1px solid var(--gold);
+  padding: 0.3rem 1rem;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.hero__title {
+  font-family: 'Smokum', 'Rye', serif;
+  font-size: clamp(3rem, 9vw, 5.5rem);
+  line-height: 0.95;
+  color: var(--parchment);
+  text-shadow: 0 3px 0 var(--red), 0 6px 0 rgba(0, 0, 0, .6), 0 0 40px rgba(255, 180, 60, .5);
+}
+
+.hero__rope {
+  color: var(--gold);
+  margin: 1rem 0;
+  letter-spacing: 4px;
+}
+
+.hero__sub {
+  max-width: 34rem;
+  margin: 0 auto 1.5rem;
+  font-size: 1.05rem;
+}
+
+.hero__cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero__meta {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.8rem;
+  font-size: 0.9rem;
+  opacity: 0.95;
+}
+
+.btn {
+  font-family: inherit;
+  padding: 0.8rem 1.6rem;
+  border: 2px solid var(--gold);
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn--red {
+  background: var(--red);
+  color: #fff;
+  box-shadow: 3px 3px 0 #000;
+}
+
+.btn--red:hover {
+  background: #a9241e;
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--parchment);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, .6);
+}
+
+.btn--ghost:hover {
+  background: rgba(255, 255, 255, .12);
+}
+
+/* Secciones */
+.section {
+  padding: 3rem 1.5rem;
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.section__title {
+  font-family: 'Rye', serif;
+  text-align: center;
+  font-size: 2rem;
+  color: var(--parchment);
+  margin-bottom: 1.8rem;
+  text-shadow: 2px 2px 0 #000;
+}
+
+#apuesta .section__title,
+#carreras .section__title {
+  color: var(--parchment);
+}
+
+body .section {
+  background: var(--wood-dark);
+}
+
+#apuesta {
+  background: var(--wood-dark);
+}
+
+/* Carteles SE BUSCA */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.2rem;
+}
+
+.poster {
+  background: linear-gradient(var(--parchment), var(--parchment-dark));
+  padding: 1.4rem;
+  border: 3px double var(--ink);
+  outline: 6px solid var(--wood);
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, .5);
+}
+
+.poster__kicker {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: var(--red);
+  margin-bottom: 0.5rem;
+}
+
+.poster h3 {
+  font-family: 'Rye', serif;
+  margin-bottom: 0.5rem;
+}
+
+.poster p {
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+}
+
+.tag {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--parchment);
+  font-size: 0.75rem;
+  padding: 0.2rem 0.7rem;
+  letter-spacing: 1px;
+}
+
+.tag--red {
+  background: var(--red);
+  color: #fff;
+}
+
+/* Tabla tablón */
+.section--dark {
+  max-width: none;
+  background: #1a0f06;
+  border-top: 3px solid var(--gold);
+  border-bottom: 3px solid var(--gold);
+}
+
+.section--dark .section__title--light {
+  color: var(--gold);
+}
+
+.wanted {
+  max-width: 44rem;
+  margin: 0 auto;
+  background: linear-gradient(var(--parchment), var(--parchment-dark));
+  border: 10px solid var(--wood);
+  outline: 2px solid var(--gold);
+  padding: 0.5rem;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, .6);
+}
+
+.wanted table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.wanted th {
+  font-family: 'Rye', serif;
+  background: var(--ink);
+  color: var(--gold);
+  padding: 0.6rem;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+.wanted td {
+  padding: 0.6rem;
+  border-bottom: 1px dashed var(--ink);
+  text-align: center;
+}
+
+/* Boleto */
+.ticket {
+  background: linear-gradient(var(--parchment), var(--parchment-dark));
+  max-width: 30rem;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 2px dashed var(--ink);
+  outline: 8px solid var(--wood);
+  text-align: center;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, .5);
+}
+
+.ticket h2 {
+  font-family: 'Rye', serif;
+  margin-bottom: 0.5rem;
+}
+
+.ticket__form {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.2rem;
+  text-align: left;
+}
+
+.ticket__form label {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.ticket__form select,
+.ticket__form input {
+  font-family: inherit;
+  padding: 0.6rem;
+  border: 2px solid var(--ink);
+  background: #fff8e6;
+}
+
+.ticket__result {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: var(--red);
+  min-height: 1.5em;
+}
+
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--parchment-dark);
+  font-size: 0.85rem;
+  background: #1a0f06;
+  border-top: 3px solid var(--gold);
+}
+
+@media (max-width: 600px) {
+  .nav__links {
+    gap: 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  .section {
+    padding: 2rem 1rem;
+  }
+}
+
+/* Pista de carrera (solo maqueta, sin lógica) */
+.race__meta {
+  text-align: center;
+  color: var(--parchment-dark);
+  margin: -1rem 0 1.2rem;
+}
+
+.track {
+  position: relative;
+  background: linear-gradient(var(--parchment), var(--parchment-dark));
+  border: 10px solid var(--wood);
+  outline: 2px solid var(--gold);
+  padding: 1.5rem 4.5rem 1.5rem 1rem;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, .5);
+}
+
+.track__finish {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  writing-mode: vertical-rl;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  background: repeating-linear-gradient(45deg, #111 0 10px, #fff 10px 20px);
+  color: var(--gold);
+  text-shadow: 1px 1px 0 #000;
+}
+
+.lane {
+  display: grid;
+  grid-template-columns: 2rem 1fr 3.5rem;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.6rem 0;
+  border-bottom: 2px dashed var(--wood);
+}
+
+.lane:last-child {
+  border-bottom: none;
+}
+
+.lane__num {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ink);
+  color: var(--gold);
+  font-family: 'Rye', serif;
+}
+
+.lane__rider {
+  font-size: 0.9rem;
+}
+
+.lane__rider em {
+  color: var(--red);
+}
+
+.lane__line {
+  grid-column: 1 / -1;
+  position: relative;
+  height: 2.2rem;
+  background: rgba(74, 44, 23, .15);
+  border-top: 1px solid var(--wood);
+}
+
+.lane__horse {
+  position: absolute;
+  left: var(--pos, 2%);
+  top: 50%;
+  transform: translateY(-50%) scaleX(-1);
+  font-size: 1.8rem;
+}
+
+.lane__odds {
+  text-align: right;
+  font-size: 0.85rem;
+}
+
+.race__controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.race__controls .btn:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.race__note {
+  width: 100%;
+  text-align: center;
+  color: var(--parchment-dark);
+  font-size: 0.85rem;
+}
