@@ -7,6 +7,7 @@ export default defineConfig({
       input: {
         main: resolve('index.html'),
         carrera: resolve('carrera.html'),
+        bar: resolve('bar.html'),
       },
     },
   },

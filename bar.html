@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="/src/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jimmy's Bar — El Hipódromo</title>
+</head>
+
+<body>
+  <div id="app">
+    <header class="saloon-top">
+      <p class="saloon-top__town">★ San Diego, 1889 ★</p>
+      <nav class="nav">
+        <a class="nav__brand" href="/index.html">← Hipódromo</a>
+        <span class="nav__links">Jimmy's Bar</span>
+        <h3 id="barCash" class="nav__brand">$100</h3>
+      </nav>
+    </header>
+
+    <section class="section bar-page">
+      <h2 class="section__title section__title--light">El Bar de Jimmy</h2>
+      <p class="bar-page__hint">Mantené el botón para servir. Soltá cuando el trago llegue a la marca.</p>
+
+      <div class="bar-scene">
+        <div class="bar-scene__shelf" aria-hidden="true">
+          <span>🥃</span><span>🍾</span><span>🍺</span><span>🍷</span><span>🍶</span>
+        </div>
+
+        <div class="bar-scene__customer">
+          <span class="bar-scene__face" id="customerFace">🤠</span>
+          <p class="bar-scene__order">Pedido: <strong id="orderText">70% de whiskey</strong></p>
+        </div>
+
+        <div class="bar-scene__station">
+          <div class="stream" id="stream"></div>
+          <div class="glass" id="glass">
+            <div class="glass__liquid" id="liquid"></div>
+            <div class="glass__line" id="line"></div>
+          </div>
+        </div>
+
+        <p class="bar-scene__msg" id="barMsg">Serví con cuidado.</p>
+      </div>
+
+      <button id="pourBtn" class="btn btn--red pour-btn" type="button">Servir</button>
+      <div class="coins" id="coins" aria-hidden="true"></div>
+    </section>
+
+    <footer class="footer">
+    </footer>
+  </div>
+
+  <script type="module" src="/src/bar.ts"></script>
+</body>
+
+</html>

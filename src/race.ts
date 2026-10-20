@@ -20,7 +20,8 @@ const timer = setInterval(() => {
       // Calcular resultado de la apuesta
       const betHorse = localStorage.getItem('betHorse');
       const betAmount = Number(localStorage.getItem('betAmount')) || 0;
-      const cashVal = Number(localStorage.getItem('cash')) || 100;
+      const cashRaw = localStorage.getItem('cash');
+      const cashVal = cashRaw === null ? 100 : Number(cashRaw);
       
       let resultMsg = '';
       if (betHorse === winnerLabel.split('(')[0].trim()) {

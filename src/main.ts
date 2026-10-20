@@ -1,9 +1,11 @@
 // Dinero persistente entre recargas y carreras
-let cash: number = Number(localStorage.getItem('cash')) || 100;
+const savedCash = localStorage.getItem('cash');
+let cash: number = savedCash === null ? 100 : Number(savedCash);
 localStorage.setItem('cash', cash.toString());
-function updateCash(cash: number) {
+
+function updateCash(amount: number) {
   const display = document.getElementById('cashText');
-  if (display) display.textContent = `Dinero: $${cash}`;
+  if (display) display.textContent = `Dinero: $${amount}`;
 }
 updateCash(cash);
 
@@ -24,29 +26,30 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Formulario de apuesta
-let betForm = document.getElementById('bet-form') as HTMLFormElement | null;
-let betAmount = document.getElementById('bet-amount') as HTMLInputElement | null;
-let betHorse = document.getElementById('bet-horse') as HTMLSelectElement | null;
-let betResult = document.getElementById('bet-result');
+const betForm = document.getElementById('bet-form') as HTMLFormElement | null;
+const betAmount = document.getElementById('bet-amount') as HTMLInputElement | null;
+const betHorse = document.getElementById('bet-horse') as HTMLSelectElement | null;
+const betResult = document.getElementById('bet-result');
 
 betForm?.addEventListener('submit', (e) => {
   e.preventDefault();
   const selHorse = betHorse?.value;
   const amount = Number(betAmount?.value);
   if (!selHorse || !amount || amount <= 0) {
-    if (betResult) betResult.textContent = 'Tenés que apostar al menos 1 dólar, forastero.';
+    if (betResult) betResult.textContent = 'Tenés que apostar al menos 1 dólar,.';
     return;
   }
-  const cashVal = Number(localStorage.getItem('cash')) || 100;
+  const stored = localStorage.getItem('cash');
+  const cashVal = stored === null ? 100 : Number(stored);
   if (amount > cashVal) {
-    if (betResult) betResult.textContent = 'No tenés suficiente plata, forastero.';
+    if (betResult) betResult.textContent = 'No tenés suficiente plata .';
     return;
   }
-  // Guardar datos de la apuesta en localStorage antes de navegar
+  // Guardar datos de la apuesta
   localStorage.setItem('betHorse', selHorse);
   localStorage.setItem('betAmount', amount.toString());
   // Descontar dinero al apostar
   localStorage.setItem('cash', (cashVal - amount).toString());
-  updateCash(Number(localStorage.getItem('cash')));
+  updateCash(cashVal - amount);
   window.location.href = 'carrera.html';
 });
